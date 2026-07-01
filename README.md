@@ -1,157 +1,111 @@
-JobPilot AI
-About the Project
 
-Finding internships and jobs is a challenging process for students. Preparing a resume, optimizing it for ATS systems, writing recruiter messages, preparing for interviews, and tracking applications usually requires multiple websites and tools.
+# 🚀 JobPilot AI
 
-JobPilot AI was built to bring these tasks into a single platform. It helps job seekers analyze and improve their resumes, prepare for interviews, generate recruiter messages, and manage job applications through one simple dashboard.
+## Your Intelligent Career Copilot
 
-The application is built using React, deployed as a Lemma App, and uses an external AI model to generate intelligent recommendations while Lemma handles authentication and deployment.
+Analyze resumes • Optimize ATS • Generate Recruiter Messages • Prepare for Interviews • Track Applications
 
-Why We Built This
+---
 
-While applying for internships, we noticed that students spend a lot of time switching between different websites:
+# About
 
-Resume scoring tools
-ATS checkers
-Resume builders
-AI chatbots
-Interview preparation websites
-Application trackers
+JobPilot AI is an AI-powered career assistant that helps students and job seekers throughout the job application journey. The platform combines resume analysis, ATS optimization, recruiter message generation, interview preparation, and application tracking into a single dashboard.
 
-Instead of using multiple tools, we wanted to build one platform that combines all of these features.
+The application is deployed using **Lemma Apps**, while AI-powered capabilities are delivered using **Google Gemini API**.
 
-Features
-Resume Analysis
+---
 
-Upload or paste your resume along with a job description.
+# Features
 
-The AI analyzes both documents and provides:
+## Resume Analysis
+- ATS Score
+- Skill Match
+- Keyword Match
+- Education Match
+- Experience Match
+- Resume Summary
+- Improvement Suggestions
 
-ATS Score
-Skill Match
-Keyword Match
-Experience Match
-Education Match
-Resume Summary
-Missing Skills
-Suggestions to improve the resume
-Resume Optimizer
+## Resume Optimizer
+- ATS optimized resume
+- Keyword optimization
+- Improvement summary
 
-Generate an improved version of your resume that better matches the selected job description.
+## Recruiter Message Generator
+- Subject generation
+- Personalized recruiter messages
+- Tone suggestions
 
-The optimizer:
+## Interview Coach
+- HR questions
+- Technical questions
+- Preparation plan
+- Interview tips
 
-Adds important ATS keywords
-Improves wording
-Suggests better content
-Explains the improvements made
-Recruiter Message Generator
+## Application Tracker
+- Track applications
+- Search & filter
+- Dashboard statistics
 
-Generate personalized recruiter outreach messages using:
+---
 
-Candidate name
-Company
-Job role
-Candidate summary
+# Tech Stack
 
-Outputs include:
+- React
+- Vite
+- Tailwind CSS
+- React Router
+- TanStack Query
+- Lemma SDK
+- Google Gemini API
 
-Email subject
-Professional message
-Suggested tone
-Interview Coach
+---
 
-Prepare for interviews using AI-generated:
+# Architecture
 
-HR Questions
-Technical Questions
-Preparation Topics
-Interview Plan
-Interview Tips
-Application Tracker
-
-Track every application in one place.
-
-Users can:
-
-Add applications
-Update status
-Search applications
-Monitor interview progress
-View overall statistics
-Tech Stack
-Frontend
-React
-Vite
-Tailwind CSS
-React Router
-TanStack Query
-AI
-Google Gemini API
-Lemma
-Lemma SDK
-AuthGuard
-Lemma Authentication
-Lemma App Deployment
-Pod-based Application
-Architecture
 React UI
-      │
-      ▼
-AI Service Layer
-      │
-      ▼
-Google Gemini API
-      │
-      ▼
-Structured JSON Response
-      │
-      ▼
-UI Components
+→ AI Service
+→ Google Gemini API
+→ JSON Response
+→ UI
 
-Lemma is used for:
+Lemma handles:
+- Authentication
+- Pod management
+- Deployment
+- Hosting
 
-Authentication
-Pod management
-Application deployment
-Hosting on jobpilot-ai.apps.lemma.work
-Project Structure
+---
 
-Explain the folders in simple language instead of just listing them.
+# Environment
 
-For example:
+```env
+VITE_LEMMA_API_URL=https://api.lemma.work
+VITE_LEMMA_AUTH_URL=https://lemma.work/auth
+VITE_LEMMA_POD_ID=YOUR_POD_ID
+VITE_AI_API_KEY=YOUR_GEMINI_API_KEY
+```
 
-src/
- ├── pages/          Application screens
- ├── components/     Reusable UI components
- ├── services/       AI integration
- ├── lib/            Lemma configuration
- ├── hooks/          Custom React hooks
- ├── context/        Theme management
- └── utils/          Helper functions
-Challenges Faced
+---
 
-During development we faced several challenges:
+# Deployment
 
-Designing structured AI outputs for different modules.
-Integrating AI responses into reusable React components.
-Configuring Lemma authentication and deployment.
-Building prompts that consistently return structured JSON.
-Creating a clean and responsive user interface.
+```bash
+npm run build
+lemma app deploy jobpilot-ai . --pod YOUR_POD_ID --dist-dir dist --yes
+```
 
-These challenges helped improve the application's architecture and overall reliability.
+---
 
-Future Improvements
-Resume PDF upload
-Application reminders
-Company insights
-Job recommendation engine
-Resume version management
-Analytics dashboard
-Email integration
-Calendar integration
-Deployment
+# Future Scope
 
-The application is deployed as a Lemma App and is available through the Lemma platform.
+- Resume PDF Upload
+- LinkedIn Analysis
+- Job Recommendations
+- Email Integration
+- Calendar Integration
 
-Authentication is handled using the Lemma SDK and AuthGuard, while AI-powered features are generated using the Google Gemini API.
+---
+
+Built with React, Lemma SDK and Google Gemini.
+
